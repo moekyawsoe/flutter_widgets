@@ -1,16 +1,184 @@
-# materialapp_widget
+```dart
+import 'package:flutter/material.dart';
 
-Flutter Material App Widget
+void main() {
+  runApp(MyApp());
+}
 
-## Getting Started
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      //Application name
+      title: 'Flutter Hello World',
+      //Application theme data
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
+      home: MyRowDemo(),
+    );
+  }
+}
+//Text Widget
+//Center Widget
+class MyHomePage extends StatelessWidget {
+  final String title;
+  const MyHomePage({required this.title});
 
-This project is a starting point for a Flutter application.
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: Center(
+        child: Text(
+            'Hello World!',
+            textDirection: TextDirection.ltr,
+        ),
+      ),
+    );
+  }
+}
 
-A few resources to get you started if this is your first Flutter project:
+//Container Widget Example
+class MyContainerDemo extends StatelessWidget {
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Container Widget'
+        ),
+      ),
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(color:Colors.black),
+          height: 100.0,
+          width: 100.0,
+          child: Text(
+            'Hello World',
+            textDirection: TextDirection.ltr,
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+//Flutter Column Demo
+class MyColumnDemo extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'My Column Demo'
+        ),
+      ),
+      body: Column(
+        children: [
+          Text(
+            'Welcome'
+          ),
+          Text(
+            'Hello, World'
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+//Flutter Logo Demo
+class MyFlutterLogoDemo extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'MyFlutterLogoDemo'
+        ),
+      ),
+      body: Container(
+        child: FlutterLogo(
+          size: 100,
+          textColor: Colors.white,
+          style: FlutterLogoStyle.stacked,
+        ),
+      ),
+    );
+  }
+}
+
+//FlutterExpandedWidget
+class MyExpandedWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Expanded Widget'),),
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+              color: Colors.black,
+              height: 100,
+              width: 300,
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.amber,
+                width: 100,
+              ),
+            ),
+            Container(
+              color: Colors.blue,
+              height: 300,
+              width: 200,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+}
+
+//Flutter Row Widget Demo
+class MyRowDemo extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Row Demo'),),
+      body: Row(
+        children: [
+          Expanded(
+            child: Text(
+                'Deliver features faster',
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              'Craft beautiful UIS',
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: FittedBox(
+              fit: BoxFit.contain,
+              child: const FlutterLogo(),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+}
+```
